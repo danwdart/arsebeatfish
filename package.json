@@ -26,13 +26,13 @@
     "url": "https://github.com/dandart/arsebeatfish/issues"
   },
   "dependencies": {
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
-    "express": "^4.16.2",
+    "express": "^4.16.3",
     "express-session": "^1.15.6",
-    "mongoose": "^5.0.6",
+    "mongoose": "^5.1.1",
     "serve-static": "^1.13.2",
-    "snyk": "^1.69.7"
+    "snyk": "^1.80.1"
   },
   "snyk": true
 }
