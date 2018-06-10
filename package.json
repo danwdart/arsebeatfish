@@ -30,9 +30,9 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
-    "mongoose": "^5.1.1",
+    "mongoose": "^5.1.4",
     "serve-static": "^1.13.2",
-    "snyk": "^1.80.1"
+    "snyk": "^1.82.1"
   },
   "snyk": true
 }
