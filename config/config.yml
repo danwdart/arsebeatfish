@@ -1,0 +1,68 @@
+templates:
+  type: pug
+  layout: default
+static: /public
+database:
+  type: mongo
+  params:
+    connection_string: $MONGODB_CONN_STRING
+sessions:
+  cookieName: session
+  secret: YouShouldProbablyReplaceThisBecauseItsASecurityRisk
+  duration: 86400000
+  activeDuration: 300000
+  httpOnly: true
+  ephemeral: false
+collections:
+  -
+    name: users
+    type: auth
+    interfaces:
+      - rest
+      - view
+    fields:
+      -
+        username:
+          type: string
+          encrypt: true
+        password:
+          type: string
+          hash: true
+        name:
+          type: string
+          encrypt: true
+  -
+    name: animals
+    interfaces:
+      - rest
+      - view
+      - react
+    auth: users
+    fields:
+      -
+        name:
+          type: string
+        dob:
+          type: date
+auth:
+  -
+    type: openid
+    params:
+      - openid_config: $OPENID_CONFIG
+  -
+    type: oauth
+    params:
+      authorizationURL: $AUTHORIZATION_URL
+      tokenURL: $TOKEN_URL
+      clientID: $CLIENT_ID
+      clientSecret: $CLIENT_SECRET
+      callbackURL: $CALLBACK_URL
+pages:
+  -
+    route: /hello
+    template: hello
+    parameters:
+      name: Dan
+  -
+    route: /status
+    # No template means that we don't support HTML here
