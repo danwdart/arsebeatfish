@@ -59,6 +59,11 @@ auth:
       callbackURL: $CALLBACK_URL
 pages:
   -
+    route: /
+    template: index
+    parameters:
+      hello: true
+  -
     route: /hello
     template: hello
     parameters:
