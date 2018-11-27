@@ -8,11 +8,12 @@ const config = parse(
     readFileSync("config/config.yml", "utf8")
     .replace(
         new RegExp("\\$([A-Z_]+)", "g"),
-        (match: string, first: string): string => {
-            if ("undefined" === typeof process.env[first]) {
+        (_match: string, first: string): string => {
+            const firstMatch = process.env[first];
+            if ("undefined" === typeof firstMatch) {
                 throw new Error(`${first} is not set`);
             }
-            return process.env[first];
+            return firstMatch;
         },
     ),
 );

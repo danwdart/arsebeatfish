@@ -1,17 +1,13 @@
 import bodyParser from "body-parser";
 import clientSessions from "client-sessions";
-import { Request, Response, static as expressStatic } from "express";
-import mongoose from "mongoose";
 import config from "./config";
-
 import model from "./model";
+import { Application, Request, Response, static as expressStatic } from "express";
+import mongoose from "mongoose";
+import { IPage, ISchema } from './types';
 
-/*interface IAuthConfig {
-  type: string;
-  params: object;
-}*/
 
-export default async (app) => {
+export default async (app: Application) => {
   if (config.database) {
     mongoose.connect(
       config.database.params.connection_string,
@@ -34,8 +30,8 @@ export default async (app) => {
   }
 
   if (config.pages) {
-    config.pages.forEach((pageConfig) => {
-      app.get(pageConfig.route, (req: Request, res: Response) => {
+    config.pages.forEach((pageConfig: IPage) => {
+      app.get(pageConfig.route, (_req: Request, res: Response) => {
         // req.headers
         if (pageConfig.template) {
           res.render(pageConfig.template, pageConfig.parameters);
@@ -51,9 +47,9 @@ export default async (app) => {
   }
 
   if (config.collections) {
-    config.collections.forEach((schema) => {
+    config.collections.forEach((schema: ISchema) => {
       const modelSchema = model(schema);
-      app.get(`/${schema.name}`, async (req: Request, res: Response) =>
+      app.get(`/${schema.name}`, async (_req: Request, res: Response) =>
         res.status(200).json(await modelSchema.find()),
       );
       app.get(`/${schema.name}/:id`, async (req: Request, res: Response) => {

@@ -1,9 +1,6 @@
-import mongoose, { SchemaDefinition } from "mongoose";
+import mongoose from "mongoose";
 
-interface ISchema {
-    name: string;
-    fields: SchemaDefinition;
-}
+import { ISchema } from './types';
 
 export default (schema: ISchema) => mongoose.model(
     schema.name,
