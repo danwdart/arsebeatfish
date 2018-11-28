@@ -1,4 +1,5 @@
 import { SchemaDefinition } from "mongoose";
+import { Request as ExpressRequest } from "express";
 
 export interface IAuthConfig {
   type: string;
@@ -14,4 +15,12 @@ export interface IPage {
 export interface ISchema {
   name: string;
   fields: SchemaDefinition;
+}
+
+export interface IRequest extends ExpressRequest {
+ session?: {
+  passport?: {
+    user?: any
+  }
+ };
 }

@@ -1,6 +1,7 @@
-import { NextFunction, Request, Response } from "express";
+import { NextFunction, Response } from "express";
+import { IRequest } from "./types";
 
-export const requireLogin = (req: Request, res: Response, next: NextFunction) => {
+export const requireLogin = (req: IRequest, res: Response, next: NextFunction) => {
   if (!req.url.startsWith("/users/signin") &&
     (!req.session || !req.session.passport || !req.session.passport.user)
   ) {

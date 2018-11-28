@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-import { ISchema } from './types';
+import { ISchema } from "./types";
 
 export default (schema: ISchema) => mongoose.model(
     schema.name,
