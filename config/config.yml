@@ -21,16 +21,18 @@ collections:
       - rest
       - view
     fields:
-      -
-        username:
-          type: string
-          encrypt: true
-        password:
-          type: string
-          hash: true
-        name:
-          type: string
-          encrypt: true
+      username:
+        type: string
+        required: true
+        encrypt: true
+      password:
+        type: string
+        required: true
+        hash: true
+      name:
+        type: string
+        required: true
+        encrypt: true
   -
     name: animals
     interfaces:
@@ -39,11 +41,12 @@ collections:
       - react
     auth: users
     fields:
-      -
-        name:
-          type: string
-        dob:
-          type: date
+      name:
+        type: string
+        required: true
+      dob:
+        type: date
+        required: true
 auth:
   -
     type: openid
