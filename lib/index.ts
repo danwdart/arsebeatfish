@@ -58,10 +58,16 @@ export default async (app: Application) => {
           res.status(404).json({error: "Not Found"});
         }
       });
-      /*
       app.post(`/${schema.name}`, async (req: IRequest, res: Response) => {
-        //
+        try {
+          const newModel = new modelSchema(req.body);
+          await newModel.save();
+          res.status(201).json(newModel);
+        } catch (err) {
+          res.status(400).json({error: err.message});
+        }
       });
+      /*
       app.put(`/${schema.name}/:id`, async (req: IRequest, res: Response) => {
         //
       });
