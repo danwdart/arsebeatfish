@@ -8,7 +8,8 @@
     "prepublish": "npm run snyk-protect",
     "snyk-protect": "snyk protect",
     "start": "node -r esm index.js",
-    "test": "tslint --fix --project ."
+    "test": "tslint --fix --project .",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,8 @@
   "dependencies": {
     "dotenv": "^8.0.0",
     "esm": "^3.2.22",
-    "yaml": "^1.5.1"
+    "yaml": "^1.5.1",
+    "snyk": "^1.189.0"
   },
   "snyk": true,
   "devDependencies": {
