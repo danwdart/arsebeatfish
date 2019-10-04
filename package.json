@@ -32,7 +32,7 @@
     "dotenv": "^8.0.0",
     "esm": "^3.2.22",
     "yaml": "^1.5.1",
-    "snyk": "^1.207.2"
+    "snyk": "^1.230.5"
   },
   "snyk": true,
   "devDependencies": {
