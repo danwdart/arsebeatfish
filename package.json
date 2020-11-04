@@ -31,7 +31,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "esm": "^3.2.25",
-    "snyk": "^1.423.0",
+    "snyk": "^1.424.0",
     "yaml": "^2.0.0-1"
   },
   "snyk": true,
