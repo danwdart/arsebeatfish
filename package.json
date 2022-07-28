@@ -42,7 +42,7 @@
     "body-parser": "^2.0.0-beta.1",
     "client-sessions": "^0.8.0",
     "express": "^5.0.0-beta.1",
-    "mongoose": "^6.3.3",
+    "mongoose": "^6.4.6",
     "pug": "^3.0.2",
     "typescript": "^4.8.0-dev.20220510"
   }
