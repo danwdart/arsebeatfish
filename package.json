@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "prepublish": "npm run snyk-protect",
-    "snyk-protect": "snyk protect",
+    "snyk-protect": "snyk-protect",
     "start": "node -r esm index.js",
     "test": "eslint --fix --project .",
     "prepare": "npm run snyk-protect"
@@ -31,7 +31,6 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "esm": "^3.2.25",
-    "snyk": "^1.1092.0",
     "yaml": "^2.2.1"
   },
   "snyk": true,
